@@ -1,3 +1,5 @@
+import Axios from 'axios';
+const serverUrl = 'https://my-json-server.typicode.com/michael-haberzettel/react-hooks-sample';
 export interface IArticle {
     id: string;
     name: string;
@@ -5,11 +7,5 @@ export interface IArticle {
 }
 
 export function getArticles(): Promise<IArticle[]> {
-    return new Promise((resolve, error) => {
-        setTimeout(() => resolve([
-            { id: "1", name: 'Pommes', price: 1.2 },
-            { id: "2", name: 'Courgette', price: 1.5 },
-            { id: "3", name: 'Banane', price: 1.1 },
-        ]), 1500);
-    });
+    return Axios(`${serverUrl}/articles`).then(res => res.data);
 }

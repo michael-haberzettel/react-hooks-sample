@@ -2,7 +2,11 @@ import { BasketActionTypes, ADD_ARTICLE_IN_BASKET } from "../constants/action-ty
 import produce from 'immer';
 
 export interface IStoreBasketArticle {
-  [key: string]: number;
+  [key: string]: {
+    idArticle: string;
+    nb: number;
+    unitPrice: number;
+  }
 }
 
 export interface IStoreData {
@@ -15,11 +19,12 @@ const initialState: IStoreData = {
 
 function rootReducer(state: IStoreData = initialState, action: BasketActionTypes): IStoreData {
   if (action.type === ADD_ARTICLE_IN_BASKET) {
-    const { idArticle, nb } = action.payload;
+    const { idArticle, nb, unitPrice } = action.payload;
     return produce(state, stateModifier => {
-      state.basket[idArticle] != null
-        ? stateModifier.basket[idArticle] = state.basket[idArticle] + nb
-        : stateModifier.basket[idArticle] = nb;
+      const basket = stateModifier.basket;
+      basket[idArticle] != null
+        ? basket[idArticle] = { ...basket[idArticle], nb: basket[idArticle].nb + nb }
+        : basket[idArticle] = { idArticle, nb, unitPrice };
     });
   };
 

@@ -4,6 +4,7 @@ export const REMOVE_ARTICLE_IN_BASKET = "REMOVE_ARTICLE_IN_BASKET";
 export interface IArticlePayload {
     idArticle :string;
     nb : number;
+    unitPrice: number;
 }
 
 export  interface AddArticleInBasket {

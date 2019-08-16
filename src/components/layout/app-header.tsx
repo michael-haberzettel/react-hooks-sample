@@ -1,54 +1,14 @@
 import * as React from "react";
 import { FaHome, FaShoppingBasket, FaUser } from "react-icons/fa";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { IStoreData } from "../../reducers";
 import { connect } from "react-redux";
 import Badge from "../shared/badge";
+import { HeaderContainer, HeaderLeftSide, HeaderLink, HeaderCenterSide, HeaderRightSide, LinkUser } from "./atoms";
 
-type HeaderLinkExtraProps = {
-    hovercolor: string;
-}
 
-export interface IAppHeaderPropsFromStore {
+interface IAppHeaderPropsFromStore {
     nbDifferentArticles: number;
 }
-
-const HeaderContainer = styled.header`
-    background-color:#444;
-    color:white;
-    font-size:1.2em;
-    display:flex;
-    width:100%;
-    align-items:stretch;
-`;
-
-const HeaderLeftSide = styled.div`
-    background-color:#222;
-    padding: 10px;
-`;
-
-const HeaderCenterSide = styled.div`
-    flex-grow:1;
-    padding: 10px;
-`;
-
-const HeaderRightSide = styled.div`
-    background-color:#733;
-    padding: 10px;
-`;
-
-const HeaderLink = styled(Link) <HeaderLinkExtraProps>`
-  :visited { color:white;  }
-  :hover   { color: ${props => props.hovercolor};   }
-  svg {
-      color:white;
-  }
-`;
-
-const LinkUser = styled(HeaderLink)`
-    margin-left:20px;
-`;
 
 const AppHeader: React.FC<IAppHeaderPropsFromStore> = props => {
 
@@ -78,7 +38,7 @@ const AppHeader: React.FC<IAppHeaderPropsFromStore> = props => {
 
 function reduxMapStateToProps(appState: IStoreData): IAppHeaderPropsFromStore {
     return {
-        nbDifferentArticles: Object.entries(appState.basket)
+        nbDifferentArticles: Object.values(appState.basket)
             .reduce((acc, value) => acc + 1, 0)
     }
 }

@@ -1,31 +1,18 @@
 import * as React from "react";
 import { store } from "../../store";
 import { addArticleInBasket } from "../../actions";
-import styled from "styled-components";
 import { FaMinusCircle, FaPlusCircle, FaShoppingCart } from "react-icons/fa";
 import LabelButton from "../shared/label-button";
 import { useToasts } from 'react-toast-notifications'
+import { ArticleContainer, ArticleLabel, ArticleLabelInBasket } from "./atoms";
 
-export interface IArticleProps {
+interface IArticleProps {
     displayName: string;
     id: string;
     price: number;
     currency: string;
     nbInBasket: number;
 }
-
-const ArticleContainer = styled.div`
-    display:flex;
-`;
-
-const ArticleLabel = styled.span`
-    width:200px;
-`;
-
-const ArticleLabelInBasket = styled.span`
-    margin-left:40px;
-    color:#444;
-`;
 
 export const Article: React.FC<IArticleProps> = props => {
 
@@ -54,7 +41,8 @@ export const Article: React.FC<IArticleProps> = props => {
     const addArticlesToBasket = (numberArticlesToAdd: number) => {
         store.dispatch(addArticleInBasket({
             idArticle: props.id,
-            nb: numberArticlesToAdd
+            nb: numberArticlesToAdd,
+            unitPrice : props.price
         }))
 
         setNumberArticlesToAdd(0);
