@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Provider } from 'react-redux';
+import { store } from './store';
+import AppHeader from './components/layout/app-header';
+import { Route, MemoryRouter } from 'react-router-dom';
+import Shopping from './components/shopping-area/shopping';
+import { ToastProvider } from 'react-toast-notifications';
+import Profil from './components/profil-area/profil';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <MemoryRouter>
+        <ToastProvider autoDismissTimeout={6000}>
+          <AppHeader />
+          <Route exact path="/" component={Shopping} />
+          <Route exact path="/profil" component={Profil} />
+        </ToastProvider>
+      </MemoryRouter>
+    </Provider>
   );
 }
 
