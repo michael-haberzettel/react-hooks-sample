@@ -5,7 +5,7 @@ Le but de ce projet est de tester React avec certaines bibliothèques à des fin
 ## Technologies utilisées
 
 ### Azure DevOps
-Permet de fournir une cha£ine CI/CD très simple à mettre en oeuvre. A chaque push sur la branche master
+Permet de fournir une chaîne CI/CD très simple à mettre en oeuvre. A chaque push sur la branche master
 le site est compilé et déployé sur l'URL suivante si la build en succès : https://react-sample-app.azurewebsites.net/
 
 Status du build : [![Build Status](https://dev.azure.com/ADMHaberzetMi/ADM_HaberzetMi/_apis/build/status/ADM_HaberzetMi-CI?branchName=master)](https://dev.azure.com/ADMHaberzetMi/ADM_HaberzetMi/_build/latest?definitionId=2&branchName=master)

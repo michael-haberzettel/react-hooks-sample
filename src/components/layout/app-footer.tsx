@@ -11,7 +11,7 @@ const AppFooter: React.FC<IAppFooterPropsFromStore> = props => {
     return (
         <FooterContainer>
             <FooterCopyright>No Copyright</FooterCopyright>
-            <FooterTotalPrice> Prix total : <strong>{props.totalPrice.toFixed(2)}€</strong></FooterTotalPrice>
+            <FooterTotalPrice> Prix total : <strong style={{color:'#900'}}>{props.totalPrice.toFixed(2)}€</strong></FooterTotalPrice>
         </FooterContainer>
     );
 }

@@ -15,18 +15,18 @@ interface IArticleProps {
 }
 
 export const Article: React.FC<IArticleProps> = props => {
-
     const { addToast } = useToasts();
-
     const [numberArticlesToAdd, setNumberArticlesToAdd] = React.useState(0);
-    const incrementNbArticlesToAdd = (newValue: number) => {
 
+    const displayTimedToast = (message: string, appearance: string) => addToast(message, {
+        appearance: appearance,
+        autoDismiss: true,
+        pauseOnHover: false
+    });
+
+    const incrementNbArticlesToAdd = (newValue: number) => {
         if (newValue < 0) {
-            addToast('Quantité négative impossible', {
-                appearance: 'error', 
-                autoDismiss: true,
-                pauseOnHover: false
-            })
+            displayTimedToast('Quantité négative impossible', 'error');
         }
 
         const newEffectiveValue = newValue >= 0 ? newValue : 0;
@@ -42,9 +42,9 @@ export const Article: React.FC<IArticleProps> = props => {
         store.dispatch(addArticleInBasket({
             idArticle: props.id,
             nb: numberArticlesToAdd,
-            unitPrice : props.price
-        }))
-
+            unitPrice: props.price
+        }));
+        displayTimedToast('Article ajouté au panier', 'info');
         setNumberArticlesToAdd(0);
     }
 
@@ -60,7 +60,7 @@ export const Article: React.FC<IArticleProps> = props => {
                 style={{ width: 40 }} />
             <LabelButton onClick={() => incrementNbArticlesToAdd(numberArticlesToAdd + 1)}><FaPlusCircle style={{ color: 'green' }} /></LabelButton>
 
-            <LabelButton style={{ marginLeft: 10 }} onClick={() => addArticlesToBasket(numberArticlesToAdd)}><FaShoppingCart style={{ color: 'gray' }}/></LabelButton>
+            <LabelButton style={{ marginLeft: 10 }} onClick={() => addArticlesToBasket(numberArticlesToAdd)}><FaShoppingCart style={{ color: 'gray' }} /></LabelButton>
 
             <ArticleLabelInBasket>Panier : {nbInBasket}</ArticleLabelInBasket>
         </ArticleContainer>
