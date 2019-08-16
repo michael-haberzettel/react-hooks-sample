@@ -1,3 +1,59 @@
+# Contenu du projet
+
+Le but de ce projet est de tester React avec certaines bibliothèques à des fins de démonstration.
+
+## Technologies utilisées
+
+### react hooks
+Utilisation des Hooks mis en place dans une version  récentede react afin de tester les possibilités. Cette fonctionnalité
+vise à améliorer la création des composants avec une approche plus fonctionnelle et concise tout en favorisant le partage
+de code.
+
+### typescript
+*Lien* : https://www.typescriptlang.org/
+Langage proposé par Microsoft venant enrichir le javascript pour proposer un système de typage. L'utilisation de
+typescript permet de découvrir l'utilisation des bibliothèques plus facilement et surtout de minimiser les erreurs
+de programmation grâce à la vérification des types.
+
+### styled-components
+*Lien* : https://www.styled-components.com
+Permet de faire de la stylisation des composants en javascript (appelé "CSS in JS"). Voici quelques avantages de cette approche :
+ - Permet d'assurer l'isolation des styles des composants. Principe difficile à implémenter en CSS car les styles sont appliqués en cascade.
+ - Permet de déterminer les styles morts ou inutilisées. Ce point est également difficile à maitriser en CSS.
+ - Optimisation des styles de sortie.
+ - Evite l'utilisation d'un preprocesseur CSS comme SASS.
+
+### polished
+*Lien* : https://polished.js.org/
+Bibliothèque utilitaire pour faciliter la stylisation en javascript conjointement avec styled-components.
+
+### redux
+*Lien* : https://redux.js.org/
+Bibliothèque qui permet de gérer l'état de l'application au sein d'un endroit isolé et bien contrôlé. La compréhension
+de ce composant est souvent difficile car :
+ - Il faut maitriser les principes de reducers, des actions et d'immuabilité.
+ - Il peut être difficile de savoir quel état doit être stocké dans le magasin redux. Redux a plus vocation à stocker 
+ l'état de données métiers et n'est pas adapté pour des composants réutilisables.
+
+### immer
+*Lien* : https://github.com/immerjs/immer
+Bibliothèque qui permet de faciliter grandement l'écriture de code immuable, utile pour redux et la programmation fonctionnelle  
+de manière générale.
+Justification du choix :
+ - Communauté importante et active.
+ - Immer a été choisie car elle se marie bien avec typescript pour bénéficier d'un typage fort.
+ - La syntaxe est simple d'approche même s'il y a certaines subtilités.
+
+### axios
+*Lien* : https://github.com/axios/axios
+Offre un moyen simple et extensible d'effectuer des requêtes AJAX. 
+Justification du choix :
+ - Communauté importante et active.
+ - Bibliothèque très mature.
+ - La syntaxe est simple d'approche.
+
+# Contenu original du README.md du script create-react-app
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
