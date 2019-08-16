@@ -28,7 +28,7 @@
     "prestart": "npm run lint:css",
     "start": "react-scripts start",
     "prebuild": "npm run lint:css",
-    "build": "npm run lint:css || react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint:css": "stylelint \"./src/**/*.ts*\""
