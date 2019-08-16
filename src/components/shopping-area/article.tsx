@@ -39,6 +39,11 @@ export const Article: React.FC<IArticleProps> = props => {
     }
 
     const addArticlesToBasket = (numberArticlesToAdd: number) => {
+        if (numberArticlesToAdd === 0) {
+            displayTimedToast('Veuillez ajouter au moins un article', 'error');
+            return;
+        }
+
         store.dispatch(addArticleInBasket({
             idArticle: props.id,
             nb: numberArticlesToAdd,
