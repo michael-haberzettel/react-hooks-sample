@@ -1,0 +1,9 @@
+{
+    "articles": [
+        { "id": "1", "category" : "fruit", "name": "Pommes", "price": 1.2 },
+        { "id": "2", "category" : "legume", "name": "Courgette", "price": 1.5 },
+        { "id": "3", "category" : "fruit", "name": "Banane", "price": 1.1 },
+        { "id": "4", "category" : "fruit", "name": "Tomate", "price": 2.5 },
+        { "id": "5", "category" : "legume", "name": "Mais", "price": 1.7 }
+    ]
+  }

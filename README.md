@@ -52,6 +52,10 @@ Justification du choix :
  - Bibliothèque très mature.
  - La syntaxe est simple d'approche.
 
+### my-json-server
+Utilisation de my-json-server pour émuler un serveur : https://my-json-server.typicode.com/
+Url des données :  https://my-json-server.typicode.com/michael-haberzettel/react-hooks-sample
+
 # Contenu original du README.md du script create-react-app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
