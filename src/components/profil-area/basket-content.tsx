@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { store } from '../../store';
 import { removeArticleInBasket } from '../../actions';
 import styled from 'styled-components';
+import { FaTimes } from 'react-icons/fa';
 
 interface IBasketPropsFromStore {
     articles: IStoreBasketArticle
@@ -17,6 +18,24 @@ const BasketTable = styled.table`
     td, th {
         padding:5px;
         border:1px solid silver;
+    }
+`;
+
+const RemoveBasketButton = styled.button`
+    background-color: white;
+    border: 1px solid silver;
+    padding: 4px;
+    border-radius:3px;
+    color:red;
+
+    svg {
+        position:relative;
+        top:1px;
+    }
+
+    :hover {
+        filter: brightness(85%);
+        cursor: pointer;
     }
 `;
 
@@ -67,9 +86,13 @@ const BasketContent: React.FC<IBasketPropsFromStore> = props => {
                 <tr key={article.idArticle}>
                     <td>{article.name}</td>
                     <td>{article.nb}</td>
-                    <td>{article.unitPrice}</td>
-                    <td>{(article.unitPrice * article.nb).toFixed(2)}</td>
-                    <td><button onClick={() => removeArticle(article.idArticle, article.nb)}>Supprimer</button></td>
+                    <td>{article.unitPrice}€</td>
+                    <td>{(article.unitPrice * article.nb).toFixed(2)}€</td>
+                    <td>
+                        <RemoveBasketButton onClick={() => removeArticle(article.idArticle, article.nb)}>
+                            <FaTimes/> Supprimer
+                        </RemoveBasketButton>
+                    </td>
                 </tr>)
             )}
         </tbody>

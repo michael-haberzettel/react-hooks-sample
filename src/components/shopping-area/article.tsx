@@ -17,7 +17,7 @@ interface IArticleProps {
 
 const AddBasketButton = styled.button`
     background-color: white;
-    border: 1px solid gray;
+    border: 1px solid silver;
     padding: 4px;
     border-radius:3px;
     margin-left: 20px;
