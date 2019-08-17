@@ -14,6 +14,7 @@ export const TotalNumberArticles = styled.div`
 
 export const ArticleContainer = styled.div`
     display:flex;
+    margin-top:4px;
 `;
 
 export const ArticleLabel = styled.span`
