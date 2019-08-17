@@ -21,6 +21,7 @@ const AddBasketButton = styled.button`
     padding: 4px;
     border-radius:3px;
     margin-left: 20px;
+    min-width: 130px;
     color:#222;
 
     svg {
@@ -80,7 +81,12 @@ export const Article: React.FC<IArticleProps> = props => {
             />
 
             <AddBasketButton onClick={() => addArticlesToBasket(numberArticlesToAdd)}>
-                <FaShoppingCart /> Au panier {nbInBasket > 0 ? `(Déjà ${nbInBasket})` : '' }
+                <FaShoppingCart /> Au panier
+                {nbInBasket > 0 && (
+                    <React.Fragment>
+                        <br /> (Déjà {nbInBasket})
+                    </React.Fragment>
+                )}
             </AddBasketButton>
         </ArticleContainer>
     );
