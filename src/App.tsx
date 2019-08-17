@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from './store';
 import AppHeader from './components/layout/app-header';
 import AppFooter from './components/layout/app-footer';
-import { Route, MemoryRouter } from 'react-router-dom';
+import { Route, BrowserRouter } from 'react-router-dom';
 import Shopping from './components/shopping-area/shopping';
 import { ToastProvider } from 'react-toast-notifications';
 import Profil from './components/profil-area/profil';
@@ -24,7 +24,7 @@ const MainContent = styled.div`
 const App: React.FC = () => {
   return (
     <Provider store={store}>
-      <MemoryRouter>
+      <BrowserRouter>
         <ToastProvider autoDismissTimeout={6000}>
           <MainLayout>
             <AppHeader />
@@ -36,7 +36,7 @@ const App: React.FC = () => {
             <AppFooter />
           </MainLayout>
         </ToastProvider>
-      </MemoryRouter>
+      </BrowserRouter>
     </Provider>
   );
 }
