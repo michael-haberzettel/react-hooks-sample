@@ -18,7 +18,8 @@ const Home: React.FC = () => {
         <p>Redux est utilisé pour synchroniser les articles sur le panier en haut, le prix affiché en bas ainsi que pour conserver les articles sélectionnés dans les différents écrans.</p>
         <br />
         <br />
-        <Link to="/shopping">Accès au magasin</Link>
+        <Link to="/shopping">Accès au magasin</Link><br/>
+        <Link to="/basket">Accès au panier personnel</Link>
     </HomeContainer>
 }
 

@@ -22,7 +22,7 @@ const AppHeader: React.FC<IAppHeaderPropsFromStore> = props => {
                 Site de test
             </HeaderCenterSide>
             <HeaderRightSide>
-                <HeaderLink hovercolor="#FCC" to="/">
+                <HeaderLink hovercolor="#FCC" to="/basket">
                     <FaShoppingBasket />
                     <Badge 
                         textcolor="white" 

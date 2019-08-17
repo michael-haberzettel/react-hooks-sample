@@ -2,7 +2,7 @@ import * as React from "react";
 import { store } from "../../store";
 import { addArticleInBasket } from "../../actions";
 import { FaShoppingCart } from "react-icons/fa";
-import { useToasts } from 'react-toast-notifications'
+import { useToasts } from 'react-toast-notifications';
 import { ArticleContainer, ArticleLabel, ArticleLabelInBasket } from "./atoms";
 import NumericInput from "../shared/numeric-input";
 import styled from "styled-components";

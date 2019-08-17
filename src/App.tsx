@@ -9,7 +9,8 @@ import Shopping from './components/shopping-area/shopping';
 import { ToastProvider } from 'react-toast-notifications';
 import Profil from './components/profil-area/profil';
 import styled from 'styled-components';
-import Home from './components/shopping-area/home';
+import Home from './home';
+import Basket from './components/profil-area/basket';
 
 const MainLayout = styled.div`
   display:flex;
@@ -31,6 +32,7 @@ const App: React.FC = () => {
             <AppHeader />
             <MainContent>
               <Route exact path="/" component={Home} />
+              <Route exact path="/basket" component={Basket} />
               <Route exact path="/shopping" component={Shopping} />
               <Route exact path="/profil" component={Profil} />
             </MainContent>
