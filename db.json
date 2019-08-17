@@ -5,7 +5,7 @@
         { "id": "3", "category" : "fruit", "name": "Banane", "price": 1.1 },
         { "id": "4", "category" : "fruit", "name": "Kiwi", "price": 2.5 },
         { "id": "5", "category" : "legume", "name": "Maïs", "price": 1.7 },
-        { "id": "6", "category" : "legume", "name": "Haricots", "price": 3.1 }
+        { "id": "6", "category" : "legume", "name": "Haricots", "price": 3.1 },
         { "id": "7", "category" : "fruit", "name": "Orange", "price": 1.8 }
 
     ]
