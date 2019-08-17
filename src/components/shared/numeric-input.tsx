@@ -33,6 +33,13 @@ const PlusButton = styled(LabelButton)`
     }
 `;
 
+const InternalNumericInput = styled.input`
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: right;
+    width:50px;
+`;
+
 const NumericInput: React.FC<NumericInputProps> = props => {
 
     const incrementNumber = (newValue: number) => {
@@ -49,10 +56,9 @@ const NumericInput: React.FC<NumericInputProps> = props => {
     return (
         <>
             <MinusButton onClick={() => incrementNumber(props.value - props.step)}><FaMinusCircle /></MinusButton>
-            <input type="text"
+            <InternalNumericInput type="text"
                 value={props.value}
-                onChange={e => modifyFromText(e.target.value)}
-                style={{ width: 40 }} />
+                onChange={e => modifyFromText(e.target.value)} />
             <PlusButton onClick={() => incrementNumber(props.value + props.step)}><FaPlusCircle /></PlusButton>
         </>
     );

@@ -1,11 +1,19 @@
 import styled from "styled-components";
 
 export const ArticlesContainer = styled.div`
-    margin:5px;
-    border:1px solid gray;
     padding:5px;
+`;
+
+export const ArticlesList = styled.div`
+    background-color:#FFF;
+    border:1px solid silver;
+    padding:4px;
+    flex:1;
+`;
+
+export const ArticlesBuyArea = styled.div`
     display:flex;
-    flex-direction:column;
+    flex-direction:row;
 `;
 
 export const TotalNumberArticles = styled.div`

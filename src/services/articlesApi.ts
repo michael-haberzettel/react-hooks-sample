@@ -4,6 +4,7 @@ export interface IArticle {
     id: string;
     name: string;
     price: number;
+    category: string;
 }
 
 export function getArticles(): Promise<IArticle[]> {
