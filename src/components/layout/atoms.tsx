@@ -27,6 +27,8 @@ export const HeaderCenterSide = styled.div`
 export const HeaderRightSide = styled.div`
     background-color:#733;
     padding: 10px;
+    padding-right:18px;
+    padding-left:14px;
 `;
 
 export const HeaderLink = styled(Link) <HeaderLinkExtraProps>`

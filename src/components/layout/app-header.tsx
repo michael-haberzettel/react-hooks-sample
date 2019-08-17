@@ -22,7 +22,7 @@ const AppHeader: React.FC<IAppHeaderPropsFromStore> = props => {
                 Site de test
             </HeaderCenterSide>
             <HeaderRightSide>
-                <HeaderLink hovercolor="#FCC" to="/basket">
+                <HeaderLink hovercolor="#FCC" to="/basket" >
                     <FaShoppingBasket />
                     <Badge 
                         textcolor="white" 
@@ -30,7 +30,6 @@ const AppHeader: React.FC<IAppHeaderPropsFromStore> = props => {
                         value={props.nbDifferentArticles} 
                         style={{ top: '24px', left: '2px' }} />
                 </HeaderLink>
-                <LinkUser hovercolor="#FCC" to="/profil"><FaUser /></LinkUser>
             </HeaderRightSide>
         </HeaderContainer>
     );
