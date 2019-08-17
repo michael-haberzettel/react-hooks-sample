@@ -17,7 +17,7 @@ export const ArticlesBuyArea = styled.div`
 `;
 
 export const TotalNumberArticles = styled.div`
-    margin-top:40px;
+    margin-top:20px;
 `;
 
 export const ArticleContainer = styled.div`

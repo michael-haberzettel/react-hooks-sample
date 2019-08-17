@@ -19,6 +19,7 @@ const MainLayout = styled.div`
 
 const MainContent = styled.div`
   flex-grow:1;
+  padding:4px;
 `;
 
 const App: React.FC = () => {

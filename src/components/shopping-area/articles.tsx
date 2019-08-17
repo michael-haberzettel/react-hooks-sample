@@ -23,17 +23,12 @@ interface IFIlters {
 const useOneTimeEffect = (callback: React.EffectCallback) => React.useEffect(callback, []);
 
 const Articles: React.FC<IArticlesPropsFromStore> = props => {
-
-
-    const [filteredArticles, setFilteredArticles] = React.useState<Array<IArticle>>([]);
     const [allArticles, setAllArticles] = React.useState<Array<IArticle>>([]);
     const [isLoading, setIsLoading] = React.useState(true);
     const [filters, setFilters] = React.useState<IFIlters>({});
 
-
     useOneTimeEffect(() => {
         getArticles().then(fetchedArticles => {
-
             const defaultFilters = fetchedArticles.reduce<IFIlters>((acc, currentValue) => {
                 if (acc[currentValue.category] == null) {
                     acc[currentValue.category] = {
@@ -45,32 +40,21 @@ const Articles: React.FC<IArticlesPropsFromStore> = props => {
                 return acc;
             }, {});
             setFilters(defaultFilters);
-            setFilteredArticles(fetchedArticles);
             setAllArticles(fetchedArticles);
             setIsLoading(false);
         });
     });
 
     const changeFilterCheck = (filterName: string, newState: boolean) => {
-        const newFiltersState = produce(filters, modifier => {
-            modifier[filterName].isChecked = newState;
-        })
+        const newFiltersState = produce(filters, modifier => { modifier[filterName].isChecked = newState; });
         setFilters(newFiltersState);
-
-        const activeFiltersArray = Object.values(newFiltersState).filter(filter => filter.isChecked);
-        const activeFilters = activeFiltersArray.reduce<IFIlters>((acc, filter) => {
-            acc[filter.name] = filter
-            return acc;
-        }, {});
-
-        const filteredArticles = allArticles.filter(article => activeFilters[article.category] != null);
-        setFilteredArticles(filteredArticles);
     }
+
+    const filteredArticles = allArticles.filter(article => filters[article.category].isChecked);
 
     if (isLoading) {
         return (<>Chargement en cours...</>);
     }
-
 
     const articlesInStore = store.getState().basket;
     return <ArticlesContainer>
