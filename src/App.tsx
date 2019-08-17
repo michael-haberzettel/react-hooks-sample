@@ -14,12 +14,22 @@ import BasketHome from './components/profil-area/basket-home';
 const MainLayout = styled.div`
   display:flex;
   flex-direction:column;
-  height:100vh;
+  height:100%;
 `;
 
-const MainContent = styled.div`
-  flex-grow:1;
+const HeaderContent = styled.header`
+  flex:0 0 auto;
+`;
+
+const MainContent = styled.main`
+  flex:1 1 auto;
+  position:relative;
+  overflow-y:auto;
   padding:4px;
+`;
+
+const FooterContent = styled.footer`
+  flex:0 0 auto;
 `;
 
 const App: React.FC = () => {
@@ -28,13 +38,17 @@ const App: React.FC = () => {
       <BrowserRouter>
         <ToastProvider autoDismissTimeout={6000}>
           <MainLayout>
-            <AppHeader />
+            <HeaderContent>
+              <AppHeader />
+            </HeaderContent>
             <MainContent>
               <Route exact path="/" component={Home} />
               <Route exact path="/basket" component={BasketHome} />
               <Route exact path="/shopping" component={Shopping} />
             </MainContent>
-            <AppFooter />
+            <FooterContent>
+              <AppFooter />
+            </FooterContent>
           </MainLayout>
         </ToastProvider>
       </BrowserRouter>

@@ -7,6 +7,7 @@ import { Article } from './article';
 import { ArticlesContainer, TotalNumberArticles, ArticlesBuyArea, ArticlesList } from './atoms';
 import produce from 'immer';
 import ArticlesFilters from './articles-filters';
+import { useOneTimeEffect } from '../../hooks/use-onetime-promise';
 
 interface IArticlesPropsFromStore {
     nbTotal: number;
@@ -19,9 +20,6 @@ interface IFIlters {
         isChecked: boolean;
     }
 }
-
-const useOneTimeEffect = (callback: React.EffectCallback) => React.useEffect(callback, []);
-
 const Articles: React.FC<IArticlesPropsFromStore> = props => {
     const [allArticles, setAllArticles] = React.useState<Array<IArticle>>([]);
     const [isLoading, setIsLoading] = React.useState(true);

@@ -37,7 +37,8 @@ const InternalNumericInput = styled.input`
     padding-left: 5px;
     padding-right: 5px;
     text-align: right;
-    width:50px;
+    width:40px;
+    border: 1px solid gray;
 `;
 
 const NumericInput: React.FC<NumericInputProps> = props => {

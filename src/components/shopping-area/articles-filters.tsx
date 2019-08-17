@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import { BlocArticlesFilters, FiltersList } from './atoms';
 
 interface IArticlesFiltersProps {
     filters: IFiltersProps;
@@ -13,30 +13,23 @@ interface IFiltersProps {
     }
 }
 
-const StyledArticlesFilters = styled.div`
-    background-color:#EEE;
-    border:1px solid silver;
-    width:200px;
-    padding:4px;
-`;
-
 const ArticlesFilters: React.FC<IArticlesFiltersProps> = props => {
-    return <StyledArticlesFilters>
+    return <BlocArticlesFilters>
         <em>Filtres :</em>
-        <p>
+        <FiltersList>
             {Object
                 .values(props.filters)
                 .map(filter => (
-                    <React.Fragment key={filter.name} >
+                    <div key={filter.name} >
                         <input type="checkbox"
                             checked={filter.isChecked}
                             onChange={input => props.onChangeFilter(filter.name, input.target.checked)} />
                         {filter.name}<br />
-                    </React.Fragment>
+                    </div>
                 ))
             }
-        </p>
-    </StyledArticlesFilters>
+        </FiltersList>
+    </BlocArticlesFilters>
 }
 
 export default ArticlesFilters;

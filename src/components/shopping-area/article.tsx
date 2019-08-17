@@ -3,7 +3,7 @@ import { store } from "../../store";
 import { addArticleInBasket } from "../../actions";
 import { FaShoppingCart } from "react-icons/fa";
 import { useToasts } from 'react-toast-notifications';
-import { ArticleContainer, ArticleLabel, ArticleLabelInBasket } from "./atoms";
+import { ArticleContainer, ArticleLabel } from "./atoms";
 import NumericInput from "../shared/numeric-input";
 import styled from "styled-components";
 
@@ -80,10 +80,8 @@ export const Article: React.FC<IArticleProps> = props => {
             />
 
             <AddBasketButton onClick={() => addArticlesToBasket(numberArticlesToAdd)}>
-                <FaShoppingCart /> Ajouter au panier
+                <FaShoppingCart /> Au panier {nbInBasket > 0 ? `(Déjà ${nbInBasket})` : '' }
             </AddBasketButton>
-
-            <ArticleLabelInBasket>Panier : {nbInBasket}</ArticleLabelInBasket>
         </ArticleContainer>
     );
 

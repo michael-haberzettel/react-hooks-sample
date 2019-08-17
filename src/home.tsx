@@ -16,10 +16,11 @@ const Home: React.FC = () => {
 
         <p>Code source : <a href="https://github.com/michael-haberzettel/react-hooks-sample">https://github.com/michael-haberzettel/react-hooks-sample</a> </p>
         <p>Redux est utilisé pour synchroniser les articles sur le panier en haut, le prix affiché en bas ainsi que pour conserver les articles sélectionnés dans les différents écrans.</p>
-        <br />
-        <br />
-        <Link to="/shopping">Accès au magasin</Link><br/>
-        <Link to="/basket">Accès au panier personnel</Link>
+
+        <ul>
+            <li><Link to="/shopping">Accès au magasin</Link></li>
+            <li><Link to="/basket">Accès au panier personnel</Link></li>
+        </ul>
     </HomeContainer>
 }
 
