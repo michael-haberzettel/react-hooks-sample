@@ -17,6 +17,7 @@ interface IArticleProps {
 }
 
 const AddBasketButton = styled(BorderedButton)`
+    margin-left:16px;
     color:#222;
 `;
 
