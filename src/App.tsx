@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './app.css';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import AppHeader from './components/layout/app-header';

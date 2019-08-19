@@ -65,7 +65,7 @@ export const Article: React.FC<IArticleProps> = props => {
                 step={1}
                 value={numberArticlesToAdd}
                 beforeValueChanged={value => checkNbArticlesInput(value)}
-                onValueChanged={(oldValue, newValue) => setNumberArticlesToAdd(newValue)}
+                onValueChanged={(_, newValue) => setNumberArticlesToAdd(newValue)}
             />
 
             <AddBasketButton onClick={() => addArticlesToBasket(numberArticlesToAdd)}>
