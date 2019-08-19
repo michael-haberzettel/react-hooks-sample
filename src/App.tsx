@@ -5,11 +5,12 @@ import { store } from './store';
 import AppHeader from './components/layout/app-header';
 import AppFooter from './components/layout/app-footer';
 import { Route, BrowserRouter } from 'react-router-dom';
-import Shopping from './components/shopping-area/shopping';
+import ShoppingLayout from './components/shopping-area/shopping-layout';
 import { ToastProvider } from 'react-toast-notifications';
 import styled from 'styled-components';
 import Home from './home';
-import BasketHome from './components/profil-area/basket-home';
+import BasketHome from './components/profil-area/basket-layout';
+import BuyLayout from './components/buy-workflow/buy-layout';
 
 const MainLayout = styled.div`
   display:flex;
@@ -44,7 +45,8 @@ const App: React.FC = () => {
             <MainContent>
               <Route exact path="/" component={Home} />
               <Route exact path="/basket" component={BasketHome} />
-              <Route exact path="/shopping" component={Shopping} />
+              <Route exact path="/shopping" component={ShoppingLayout} />
+              <Route exact path="/buy" component={BuyLayout}/>
             </MainContent>
             <FooterContent>
               <AppFooter />

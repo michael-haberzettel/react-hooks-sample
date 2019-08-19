@@ -4,7 +4,7 @@ import PageTitle from '../shared/page-title';
 import { Link } from 'react-router-dom';
 
 
-const Shopping: React.FC = () => {
+const ShoppingLayout: React.FC = () => {
     return <>
         <PageTitle>Magasin</PageTitle>
         <p>
@@ -15,4 +15,4 @@ const Shopping: React.FC = () => {
     </>
 }
 
-export default Shopping;
+export default ShoppingLayout;

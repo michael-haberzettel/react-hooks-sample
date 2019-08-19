@@ -20,6 +20,7 @@ const Home: React.FC = () => {
         <ul>
             <li><Link to="/shopping">Accès au magasin</Link></li>
             <li><Link to="/basket">Accès au panier personnel</Link></li>
+            <li><Link to="/buy">Accéder au workflow d'achat</Link></li>
         </ul>
     </HomeContainer>
 }

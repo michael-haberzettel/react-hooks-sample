@@ -8,6 +8,7 @@ import { store } from '../../store';
 import { removeArticleInBasket } from '../../actions';
 import styled from 'styled-components';
 import { FaTimes } from 'react-icons/fa';
+import { BorderedButton } from '../layout/atoms';
 
 interface IBasketPropsFromStore {
     articles: IStoreBasketArticle
@@ -21,22 +22,8 @@ const BasketTable = styled.table`
     }
 `;
 
-const RemoveBasketButton = styled.button`
-    background-color: white;
-    border: 1px solid silver;
-    padding: 4px;
-    border-radius:3px;
+const RemoveBasketButton = styled(BorderedButton)`
     color:red;
-
-    svg {
-        position:relative;
-        top:1px;
-    }
-
-    :hover {
-        filter: brightness(85%);
-        cursor: pointer;
-    }
 `;
 
 const BasketContent: React.FC<IBasketPropsFromStore> = props => {

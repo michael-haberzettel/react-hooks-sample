@@ -6,6 +6,7 @@ import { useToasts } from 'react-toast-notifications';
 import { ArticleContainer, ArticleLabel } from "./atoms";
 import NumericInput from "../shared/numeric-input";
 import styled from "styled-components";
+import { BorderedButton } from "../layout/atoms";
 
 interface IArticleProps {
     displayName: string;
@@ -15,24 +16,8 @@ interface IArticleProps {
     nbInBasket: number;
 }
 
-const AddBasketButton = styled.button`
-    background-color: white;
-    border: 1px solid silver;
-    padding: 4px;
-    border-radius:3px;
-    margin-left: 20px;
-    min-width: 130px;
+const AddBasketButton = styled(BorderedButton)`
     color:#222;
-
-    svg {
-        position:relative;
-        top:1px;
-    }
-
-    :hover {
-        filter: brightness(85%);
-        cursor: pointer;
-    }
 `;
 
 export const Article: React.FC<IArticleProps> = props => {
@@ -70,6 +55,8 @@ export const Article: React.FC<IArticleProps> = props => {
     }
 
     const { displayName, price, currency, nbInBasket } = props
+    const displayBasketQuantityIfAny = (nbInBasket: number) => nbInBasket > 0 && <><br />(Déjà {nbInBasket})</>;
+
     return (
         <ArticleContainer>
             <ArticleLabel>{displayName} -  {price} {currency}</ArticleLabel>
@@ -82,11 +69,7 @@ export const Article: React.FC<IArticleProps> = props => {
 
             <AddBasketButton onClick={() => addArticlesToBasket(numberArticlesToAdd)}>
                 <FaShoppingCart /> Au panier
-                {nbInBasket > 0 && (
-                    <React.Fragment>
-                        <br /> (Déjà {nbInBasket})
-                    </React.Fragment>
-                )}
+                {displayBasketQuantityIfAny(nbInBasket)}
             </AddBasketButton>
         </ArticleContainer>
     );

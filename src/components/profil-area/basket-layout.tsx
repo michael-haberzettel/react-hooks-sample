@@ -12,6 +12,9 @@ export const BasketHome: React.FC = () => {
         sont synchronisés via Redux et il est possible d'ajouter de nouveaux articles via <Link to="/shopping">le magasin</Link>.
         </p>
         <BasketContent />
+        <p>
+            <Link to="/buy">Effectuer l'achat</Link>
+        </p>
     </>
 }
 export default BasketHome;
