@@ -4,7 +4,7 @@ import { IStepProps } from './typing';
 import { IStoreData, IStoreBasketArticle } from '../../../reducers';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { BorderedButton } from '../../layout/atoms';
+import { BorderedButton } from '../../_layout/atoms';
 
 interface IStepDisplayBasketPropsFromStore {
     basket: IStoreBasketArticle;

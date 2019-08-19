@@ -8,7 +8,7 @@ import { store } from '../../store';
 import { removeArticleInBasket } from '../../actions';
 import styled from 'styled-components';
 import { FaTimes } from 'react-icons/fa';
-import { BorderedButton } from '../layout/atoms';
+import { BorderedButton } from '../_layout/atoms';
 
 interface IBasketPropsFromStore {
     articles: IStoreBasketArticle

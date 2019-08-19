@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { IStepProps } from './typing';
-import { BorderedButton } from '../../layout/atoms';
+import { BorderedButton } from '../../_layout/atoms';
 
 export interface IStepDisplayMessageProps extends IStepProps {
     contentOfStep: string;

@@ -2,15 +2,15 @@ import React from 'react';
 import './app.css';
 import { Provider } from 'react-redux';
 import { store } from './store';
-import AppHeader from './components/layout/app-header';
-import AppFooter from './components/layout/app-footer';
+import AppHeader from './components/_layout/app-header';
+import AppFooter from './components/_layout/app-footer';
 import { Route, BrowserRouter } from 'react-router-dom';
 import ShoppingLayout from './components/shopping-area/shopping-layout';
 import { ToastProvider } from 'react-toast-notifications';
 import styled from 'styled-components';
 import Home from './home';
 import BasketHome from './components/profil-area/basket-layout';
-import BuyLayout from './components/buy-workflow/buy-layout';
+import BuyLayout from './components/buy-workflow-area/buy-layout';
 
 const MainLayout = styled.div`
   display:flex;

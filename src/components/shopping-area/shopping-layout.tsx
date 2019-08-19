@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Articles from './articles';
-import PageTitle from '../shared/page-title';
+import PageTitle from '../_shared/page-title';
 import { Link } from 'react-router-dom';
-import { BorderedLink } from '../layout/atoms';
+import { BorderedLink } from '../_layout/atoms';
 import { FaShoppingCart } from 'react-icons/fa';
 
 

@@ -6,7 +6,7 @@ Le but de ce projet est de tester React avec certaines bibliothèques à des fin
 
 ### Azure DevOps
 Permet de fournir une chaîne CI/CD très simple à mettre en oeuvre. A chaque push sur la branche master
-le site est compilé et déployé sur l'URL suivante si la build en succès : https://react-sample-app.azurewebsites.net/
+le site est testé, compilé et déployé sur l'URL suivante si la build est en succès : https://react-sample-app.azurewebsites.net/
 
 Status du build : [![Build Status](https://dev.azure.com/ADMHaberzetMi/ADM_HaberzetMi/_apis/build/status/ADM_HaberzetMi-CI?branchName=master)](https://dev.azure.com/ADMHaberzetMi/ADM_HaberzetMi/_build/latest?definitionId=2&branchName=master)
 
@@ -40,6 +40,10 @@ de ce composant est souvent difficile car :
  - Il faut maitriser les principes de reducers, des actions et d'immuabilité.
  - Il peut être difficile de savoir quel état doit être stocké dans le magasin redux. Redux a plus vocation à stocker 
  l'état de données métiers et n'est pas adapté pour des composants réutilisables.
+
+### Jest
+*Lien* : https://jestjs.io/
+Bibliothèque proposée par Facebook pour effectuer des tests unitaires sur le projet lors de la phase de build. La syntaxe est basée sur une écriture fluent qui simplifie la lecture des assertions.
 
 ### immer
 *Lien* : https://github.com/immerjs/immer

@@ -4,9 +4,9 @@ import { addArticleInBasket } from "../../actions";
 import { FaShoppingCart } from "react-icons/fa";
 import { useToasts } from 'react-toast-notifications';
 import { ArticleContainer, ArticleLabel } from "./atoms";
-import NumericInput from "../shared/numeric-input";
+import NumericInput from "../_shared/numeric-input";
 import styled from "styled-components";
-import { BorderedButton } from "../layout/atoms";
+import { BorderedButton } from "../_layout/atoms";
 
 interface IArticleProps {
     displayName: string;

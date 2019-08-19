@@ -2,7 +2,7 @@ import * as React from "react";
 import { FaHome, FaShoppingBasket } from "react-icons/fa";
 import { IStoreData } from "../../reducers";
 import { connect } from "react-redux";
-import Badge from "../shared/badge";
+import Badge from "../_shared/badge";
 import { HeaderContainer, HeaderLeftSide, HeaderLink, HeaderCenterSide, HeaderRightSide } from "./atoms";
 
 

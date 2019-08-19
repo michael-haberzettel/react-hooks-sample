@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PageTitle from '../shared/page-title';
+import PageTitle from '../_shared/page-title';
 import { Link } from 'react-router-dom';
 import ProgressBar, { IProgressBarItemProps } from './progressbar-item';
 import StepDisplayBasket from './steps/step-display-basket';
