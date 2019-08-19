@@ -2,6 +2,8 @@ import * as React from 'react';
 import PageTitle from '../shared/page-title';
 import BasketContent from './basket-content';
 import { Link } from 'react-router-dom';
+import { BorderedLink } from '../layout/atoms';
+import { FaShoppingCart } from 'react-icons/fa';
 
 export const BasketHome: React.FC = () => {
 
@@ -13,7 +15,7 @@ export const BasketHome: React.FC = () => {
         </p>
         <BasketContent />
         <p>
-            <Link to="/buy">Effectuer l'achat</Link>
+            <BorderedLink to="/buy"><FaShoppingCart/> Effectuer l'achat</BorderedLink>
         </p>
     </>
 }

@@ -1,10 +1,10 @@
 import * as React from 'react';
-import BasketContent from '../profil-area/basket-content';
+import BasketContent from '../../profil-area/basket-content';
 import { IStepProps } from './typing';
-import { IStoreData, IStoreBasketArticle } from '../../reducers';
+import { IStoreData, IStoreBasketArticle } from '../../../reducers';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { BorderedButton } from '../layout/atoms';
+import { BorderedButton } from '../../layout/atoms';
 
 interface IStepDisplayBasketPropsFromStore {
     basket: IStoreBasketArticle;

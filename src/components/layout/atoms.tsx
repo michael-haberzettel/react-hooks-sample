@@ -65,6 +65,26 @@ export const FooterTotalPrice = styled.div`
     padding:10px;
 `;
 
+export const BorderedLink = styled(Link)`
+    background-color: white;
+    border: 1px solid silver;
+    padding: 4px;
+    border-radius:3px;
+    color:black;
+    svg {
+        position:relative;
+        top:1px;
+    }
+
+    &:hover {
+        filter: brightness(85%);
+        cursor: pointer;
+    }
+
+    &[disabled] {
+        background-color: silver;
+    }
+`;
 
 export const BorderedButton = styled.button`
     background-color: white;

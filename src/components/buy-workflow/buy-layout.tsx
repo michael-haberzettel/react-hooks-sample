@@ -2,8 +2,8 @@ import * as React from 'react';
 import PageTitle from '../shared/page-title';
 import { Link } from 'react-router-dom';
 import ProgressBar, { IProgressBarItemProps } from './progressbar-item';
-import StepDisplayBasket from './step-display-basket';
-import StepDisplayMessage from './step-display-message';
+import StepDisplayBasket from './steps/step-display-basket';
+import StepDisplayGenericMessage from './steps/step-display-message';
 
 const step1: IProgressBarItemProps = { isActive: true, label: 'Panier' };
 const step2: IProgressBarItemProps = { isActive: false, label: 'Résumé' };
@@ -16,9 +16,9 @@ const BuyLayout: React.FC = () => {
     const [buySteps, setBuySteps] = React.useState([step1, step2, step3]);
 
     const indexCurrentStep = buySteps.findIndex(step => step.label === currentStep.label);
+    const isStep = (stepToCompare: IProgressBarItemProps) =>  currentStep.label === stepToCompare.label;
     const defineNewCurrentStep = (newCurrentStep: IProgressBarItemProps) => {
         const newBuyStates = buySteps.map(step => ({ ...step, isActive: step.label === newCurrentStep.label }));
-        debugger;
         setCurrentStep(newCurrentStep);
         setBuySteps(newBuyStates);
     }
@@ -49,9 +49,9 @@ const BuyLayout: React.FC = () => {
 
         <ProgressBar steps={buySteps} />
 
-        {currentStep.label === step1.label && <StepDisplayBasket isFirstStep={isFirstStep} isLastStep={isLastStep} actions={actions} />}
-        {currentStep.label === step2.label && <StepDisplayMessage contentOfStep="Etape 2" isFirstStep={isFirstStep} isLastStep={isLastStep} actions={actions} />}
-        {currentStep.label === step3.label && <StepDisplayMessage contentOfStep="Etape 3" isFirstStep={isFirstStep} isLastStep={isLastStep} actions={actions} />}
+        {isStep(step1) && <StepDisplayBasket isFirstStep={isFirstStep} isLastStep={isLastStep} actions={actions} />}
+        {isStep(step2) && <StepDisplayGenericMessage contentOfStep="Etape de résumé" isFirstStep={isFirstStep} isLastStep={isLastStep} actions={actions} />}
+        {isStep(step3) && <StepDisplayGenericMessage contentOfStep="Etape de fin" isFirstStep={isFirstStep} isLastStep={isLastStep} actions={actions} />}
 
     </>
 }
