@@ -35,7 +35,7 @@ const BuyLayout: React.FC = () => {
     const commonStepProps: IStepProps = {
         isFirstStep: indexCurrentStep === 0,
         isLastStep: indexCurrentStep === buySteps.length - 1,
-        actions : {
+        actions: {
             goNextStep: () => goToNextStep(),
             goPreviousStep: () => goToPreviousStep()
         }
@@ -49,8 +49,15 @@ const BuyLayout: React.FC = () => {
         <ProgressBar steps={buySteps} />
 
         {isStep(step1) && <StepDisplayBasket {...commonStepProps} />}
-        {isStep(step2) && <StepDisplayGenericMessage contentOfStep="Etape de résumé" {...commonStepProps} />}
-        {isStep(step3) && <StepDisplayGenericMessage contentOfStep="Etape de fin" {...commonStepProps} />}
+        {isStep(step2) && <StepDisplayGenericMessage {...commonStepProps} >Etape de résumé </StepDisplayGenericMessage>}
+        {isStep(step3) && (
+            <StepDisplayGenericMessage {...commonStepProps} >
+                <p>
+                    Etape de fin. <br /> <br />
+                    <strong style={{fontSize:'1.3em;'}}> Merci d'avoir testé le projet jusqu'à cette étape. :)</strong>
+                </p>
+            </StepDisplayGenericMessage>
+        )}
     </>
 }
 

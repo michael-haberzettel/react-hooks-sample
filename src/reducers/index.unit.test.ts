@@ -1,5 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import rootReducer, { IStoreData } from '.';
 import { addArticleInBasket, removeArticleInBasket } from '../actions';
 

@@ -3,14 +3,14 @@ import { IStepProps } from './typing';
 import { BorderedButton } from '../../_layout/atoms';
 
 export interface IStepDisplayMessageProps extends IStepProps {
-    contentOfStep: string;
+
 }
 
 export const StepDisplayGenericMessage: React.FC<IStepDisplayMessageProps> = props => {
 
     return <>
         <p>
-            {props.contentOfStep}
+            {props.children}
         </p>
         <br />
         {!props.isFirstStep && (
