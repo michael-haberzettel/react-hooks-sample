@@ -11,6 +11,7 @@ import styled from 'styled-components';
 import Home from './home';
 import BasketHome from './components/profil-area/basket-layout';
 import BuyLayout from './components/buy-workflow-area/buy-layout';
+import CreateProfile from './components/profil-area/create-profile';
 
 const MainLayout = styled.div`
   display:flex;
@@ -44,6 +45,7 @@ const App: React.FC = () => {
             </HeaderContent>
             <MainContent>
               <Route exact path="/" component={Home} />
+              <Route exact path="/create-profile" component={CreateProfile}/>
               <Route exact path="/basket" component={BasketHome} />
               <Route exact path="/shopping" component={ShoppingLayout} />
               <Route exact path="/buy" component={BuyLayout}/>

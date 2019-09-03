@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import CreateProfile from './components/profil-area/create-profile';
 
 
 const HomeContainer = styled.div`
@@ -18,6 +19,8 @@ const Home: React.FC = () => {
         <p>Redux est utilisé pour synchroniser les articles sur le panier en haut, le prix affiché en bas ainsi que pour conserver les articles sélectionnés dans les différents écrans.</p>
 
         <ul>
+
+            <li><Link to="/create-profile">Créer un profil</Link></li>
             <li><Link to="/shopping">Accès au magasin</Link></li>
             <li><Link to="/basket">Accès au panier personnel</Link></li>
             <li><Link to="/buy">Accéder au workflow d'achat</Link></li>
